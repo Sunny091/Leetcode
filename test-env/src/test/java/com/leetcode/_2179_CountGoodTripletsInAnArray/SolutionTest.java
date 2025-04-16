@@ -25,5 +25,4 @@ public class SolutionTest {
         int[] num2 = { 8, 7, 9, 5, 6, 14, 15, 10, 2, 11, 4, 13, 3, 12, 1, 0 };
         assertEquals(77, Solution.goodTriplets(num1, num2));
     }
-
 }
