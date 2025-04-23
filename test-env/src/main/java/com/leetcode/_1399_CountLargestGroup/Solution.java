@@ -1,22 +1,15 @@
 package com.leetcode._1399_CountLargestGroup;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Solution {
     public static Integer countLargestGroup(int n) {
         int answer = 0;
-        Map<Integer, Integer> map = new HashMap<>();
+        int[] map = new int[37];
         for (int i = 1; i <= n; i++) {
             int digit = digitAddition(i);
-            if (!map.containsKey(digit)) {
-                map.put(digit, 1);
-            } else {
-                map.put(digit, map.get(digit) + 1);
-            }
+            map[digit]++;
         }
         int max = 0;
-        for (int value : map.values()) {
+        for (int value : map) {
             if (value > max) {
                 max = value;
                 answer = 1;
