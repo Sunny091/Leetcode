@@ -5,8 +5,12 @@ public class Solution {
         int answer = 0;
         int[] map = new int[37];
         for (int i = 1; i <= n; i++) {
-            int digit = digitAddition(i);
-            map[digit]++;
+            int sum = 0, x = i;
+            while (x > 0) {
+                sum += x % 10;
+                x /= 10;
+            }
+            map[sum]++;
         }
         int max = 0;
         for (int value : map) {
@@ -18,15 +22,5 @@ public class Solution {
             }
         }
         return answer;
-    }
-
-    public static int digitAddition(int n) {
-        int result = 0;
-        while (n > 0) {
-            int temp = n % 10;
-            result += temp;
-            n /= 10;
-        }
-        return result;
     }
 }
