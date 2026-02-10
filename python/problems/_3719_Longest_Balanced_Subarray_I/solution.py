@@ -3,30 +3,22 @@ from typing import List
 
 class Solution:
     def longestBalanced(self, nums: List[int]) -> int:
-        """
-        LeetCode 3719. Longest Balanced Subarray I
-
-        TODO: Implement your solution here
-        """
         answer = 0
+        temp = set()
         for i in range(len(nums)):
-            balence = 0
-            temp = []
-            temp.append(nums[i])
-            if nums[i] % 2 == 0:
-                balence += 1
-            else:
-                balence -= 1
+            if i > len(nums)-answer:
+                break
+            balance = 0
+            temp.add(nums[i])
+            balance += 1-(nums[i] & 1)*2
             for j in range(i+1, len(nums)):
                 if nums[j] in temp:
-                    if balence == 0:
+                    if balance == 0:
                         answer = max(answer, j - i + 1)
                     continue
-                temp.append(nums[j])
-                if nums[j] % 2 == 0:
-                    balence += 1
-                else:
-                    balence -= 1
-                if balence == 0:
+                temp.add(nums[j])
+                balance += 1-(nums[j] & 1)*2
+                if balance == 0:
                     answer = max(answer, j - i + 1)
+            temp.clear()
         return answer
