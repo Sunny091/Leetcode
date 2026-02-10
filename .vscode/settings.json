@@ -1,4 +1,7 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "python.testing.pytestArgs": ["python"],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
