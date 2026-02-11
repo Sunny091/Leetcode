@@ -43,6 +43,10 @@ class TestSolution:
     def test_example_2(self):
         # TODO: Add test case
         pass
+    
+    def test_example_3(self):
+        # TODO: Add test case
+        pass
 '''
 
 
