@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python -m pytest:*)",
-      "Bash(python3 -m pytest:*)"
+      "Bash(python3 -m pytest:*)",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }
