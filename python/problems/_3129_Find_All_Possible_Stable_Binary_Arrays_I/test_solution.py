@@ -1,0 +1,32 @@
+import pytest
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
+from solution import Solution
+
+
+class TestSolution:
+    def setup_method(self):
+        self.sol = Solution()
+
+    def test_example_1(self):
+        # TODO: Add test case
+        zero = 1
+        one = 1
+        limit = 2
+        assert self.sol.numberOfStableArrays(zero, one, limit) == 2
+
+    def test_example_2(self):
+        # TODO: Add test case
+        zero = 1
+        one = 2
+        limit = 1
+        assert self.sol.numberOfStableArrays(zero, one, limit) == 1
+
+    def test_example_3(self):
+        # TODO: Add test case
+        zero = 3
+        one = 3
+        limit = 2
+        assert self.sol.numberOfStableArrays(zero, one, limit) == 14
