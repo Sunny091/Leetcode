@@ -16,8 +16,8 @@ class Solution:
                 nums[idx] = (nums[idx] * v) % MOD
                 idx += k
 
-        answer = nums[0]
-        for i in range(1, len(nums)):
-            answer ^= nums[i]
+        answer = 0
+        for num in nums:
+            answer ^= num
 
         return answer
